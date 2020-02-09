@@ -1,4 +1,4 @@
 # PokemonIUT
 
-# Day 1
+## Day 1
 ![](https://i.imgur.com/p7y0Rj8.png)
