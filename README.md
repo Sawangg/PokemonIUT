@@ -1,7 +1,7 @@
 # PokemonIUT
 
 ## Day 1
-Starting with a new project and setting up the basics of the game with some trivial graphics 
+Started with a new project and added the basics of the game with some trivial graphics 
 
 ![](https://i.imgur.com/p7y0Rj8.png)
 
