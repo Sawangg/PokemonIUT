@@ -14,3 +14,9 @@ Added mouvements animations + borders management and started the rendering of th
 Added infinite map support and started the tile map
 
 ![](https://i.imgur.com/ERo3mXD.gif)
+
+## Day 5
+
+Added collisions even tho it's not perfect it's a beginning
+
+![](https://i.imgur.com/QUULBBL.gif)
