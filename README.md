@@ -1,5 +1,7 @@
 # PokemonIUT
 
+A one week project where I created a Pokemon game.
+
 ## Day 1
 Started with a new project and added the basics of the game with some trivial graphics 
 
