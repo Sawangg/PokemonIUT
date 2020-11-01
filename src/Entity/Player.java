@@ -1,7 +1,5 @@
 package Entity;
 
-import java.awt.Point;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -30,50 +28,52 @@ public class Player {
 	Icon player_15 = new ImageIcon("./ressources/player/player_15.png");
 	Icon player_16 = new ImageIcon("./ressources/player/player_16.png");
 
-	private int x = 200;
-	private int y = 200; 
 	private int velocity = 1;
 	private String posPlayer = "";
 	private Icon prevImg = player_01;
 
 	public Player() {
-		playerLabel.setBounds(100, 100, 100, 100);
-		playerLabel.setVisible(true);
-		playerLabel.setIcon(player_01);
+		this.playerLabel.setBounds(Main.xSize, Main.ySize, 75, 75);
+		this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+		this.playerLabel.setIcon(player_01);
+		this.playerLabel.setVisible(true);
 	}
-	
 	
 	public JLabel getPlayerLabel() {
 		return this.playerLabel;
+
 	}
 	
-	public Point getPlayerPosition() {
-		return this.playerLabel.getLocation();
+	public void noPlayerLabel() {
+		this.playerLabel.setVisible(false);
 	}
-
-
+	
+	public void addPlayerLabel() {
+		this.playerLabel.setVisible(true);
+	}
+	
 	// Anim haut
 	private void frameUP(Icon prev) {
 		switch(prev.toString().substring(20, 29)) {
 		case "player_13":
-			playerLabel.setIcon(player_14);
-			prevImg = player_14;
+			this.playerLabel.setIcon(this.player_14);
+			this.prevImg = this.player_14;
 			break;
 		case "player_14":
-			playerLabel.setIcon(player_15);
-			prevImg = player_15;
+			this.playerLabel.setIcon(this.player_15);
+			this.prevImg = this.player_15;
 			break;
 		case "player_15": 
-			playerLabel.setIcon(player_16);
-			prevImg = player_16;
+			this.playerLabel.setIcon(this.player_16);
+			this.prevImg = this.player_16;
 			break;
 		case "player_16": 
-			playerLabel.setIcon(player_13);
-			prevImg = player_13;
+			this.playerLabel.setIcon(this.player_13);
+			this.prevImg = this.player_13;
 			break;
 		default:
-			playerLabel.setIcon(player_13);
-			prevImg = player_13;
+			this.playerLabel.setIcon(this.player_13);
+			this.prevImg = this.player_13;
 			break;
 		} 
 	}
@@ -82,24 +82,24 @@ public class Player {
 	private void frameLEFT(Icon prev) {
 		switch(prev.toString().substring(20, 29)) {
 		case "player_05":
-			playerLabel.setIcon(player_06);
-			prevImg = player_06;
+			this.playerLabel.setIcon(this.player_06);
+			this.prevImg = this.player_06;
 			break;
 		case "player_06":
-			playerLabel.setIcon(player_07);
-			prevImg = player_07;
+			this.playerLabel.setIcon(this.player_07);
+			this.prevImg = this.player_07;
 			break;
 		case "player_07": 
-			playerLabel.setIcon(player_08);
-			prevImg = player_08;
+			this.playerLabel.setIcon(this.player_08);
+			this.prevImg = this.player_08;
 			break;
 		case "player_08": 
-			playerLabel.setIcon(player_05);
-			prevImg = player_05;
+			this.playerLabel.setIcon(this.player_05);
+			this.prevImg = this.player_05;
 			break;
 		default:
-			playerLabel.setIcon(player_05);
-			prevImg = player_05;
+			this.playerLabel.setIcon(this.player_05);
+			this.prevImg = this.player_05;
 			break;
 		} 
 	}
@@ -108,24 +108,24 @@ public class Player {
 	private void frameRIGHT(Icon prev) {
 		switch(prev.toString().substring(20, 29)) {
 		case "player_09":
-			playerLabel.setIcon(player_10);
-			prevImg = player_10;
+			this.playerLabel.setIcon(this.player_10);
+			this.prevImg = this.player_10;
 			break;
 		case "player_10":
-			playerLabel.setIcon(player_11);
-			prevImg = player_11;
+			this.playerLabel.setIcon(this.player_11);
+			this.prevImg = this.player_11;
 			break;
 		case "player_11": 
-			playerLabel.setIcon(player_12);
-			prevImg = player_12;
+			this.playerLabel.setIcon(this.player_12);
+			this.prevImg = this.player_12;
 			break;
 		case "player_12": 
-			playerLabel.setIcon(player_09);
-			prevImg = player_09;
+			this.playerLabel.setIcon(this.player_09);
+			this.prevImg = this.player_09;
 			break;
 		default:
-			playerLabel.setIcon(player_09);
-			prevImg = player_09;
+			this.playerLabel.setIcon(this.player_09);
+			this.prevImg = this.player_09;
 			break;
 		} 
 	}
@@ -134,115 +134,171 @@ public class Player {
 	private void frameDOWN(Icon prev) {
 		switch(prev.toString().substring(20, 29)) {
 		case "player_01":
-			playerLabel.setIcon(player_02);
-			prevImg = player_02;
+			this.playerLabel.setIcon(this.player_02);
+			this.prevImg = this.player_02;
 			break;
 		case "player_02":
-			playerLabel.setIcon(player_03);
-			prevImg = player_03;
+			this.playerLabel.setIcon(this.player_03);
+			this.prevImg = this.player_03;
 			break;
 		case "player_03": 
-			playerLabel.setIcon(player_04);
-			prevImg = player_04;
+			this.playerLabel.setIcon(this.player_04);
+			this.prevImg = this.player_04;
 			break;
 		case "player_04": 
-			playerLabel.setIcon(player_01);
-			prevImg = player_01;
+			this.playerLabel.setIcon(this.player_01);
+			this.prevImg = this.player_01;
 			break;
 		default:
-			playerLabel.setIcon(player_01);
-			prevImg = player_01;
+			this.playerLabel.setIcon(this.player_01);
+			this.prevImg = this.player_01;
 			break;
 		} 
 	}
 
-	public void setAnim(char key) {
+	public void setAnim(char key, boolean collision) {
 		switch(key) {
 		case 'z':
-			frameUP(prevImg);
-			posPlayer = "up";
-			y -= velocity * 5;
-			playerLabel.setLocation(x, y);
-			if(y == -60) { // Quand le joueur sors du haut de l'écran
-				borderManagement(posPlayer);
+			this.frameUP(this.prevImg);
+			if(collision) {
+				new SoundEffect("collision(firered_0007)").play();
+				this.knockback(8);
+			} else {
+				this.posPlayer = "up";
+				Main.yPlayer-= this.velocity * 5;
+				this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+				if(Main.yPlayer <= -60) { // Quand le joueur sors du haut de l'écran
+					this.tableauSuivant();
+				}	
 			}
 			break;
+			
 		case 'q':
-			frameLEFT(prevImg);
-			posPlayer = "left";
-			x -= velocity * 5;
-			playerLabel.setLocation(x, y);
-			if(x == -35) { // Quand le joueur touche sors de la gauche de l'écran
-				borderManagement(posPlayer);
+			if(collision) {
+				new SoundEffect("collision(firered_0007)").play();
+				this.knockback(8);
+			} else {
+				this.posPlayer = "left";
+				this.frameLEFT(this.prevImg);
+				Main.xPlayer -= this.velocity * 5;
+				this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+				if(Main.xPlayer <= -35) { // Quand le joueur touche sors de la gauche de l'écran
+					this.tableauSuivant();
+				}	
 			}
 			break;
-		case 's': 
-			frameDOWN(prevImg);
-			posPlayer = "down";
-			y += velocity * 5;
-			playerLabel.setLocation(x, y);
-			if(y == Main.ySize - 100) { // Quand le joueur sors du bas de l'écran
-				borderManagement(posPlayer);
+			
+		case 's':
+			if(collision) {
+				new SoundEffect("collision(firered_0007)").play();
+				this.knockback(8);
+			} else {
+				this.posPlayer = "down";
+				this.frameDOWN(this.prevImg);
+				Main.yPlayer += this.velocity * 5;
+				this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+				if(Main.yPlayer >= Main.ySize - 50) { // Quand le joueur sors du bas de l'écran
+					this.tableauSuivant();
+				}
 			}
 			break;
+
 		case 'd': 
-			frameRIGHT(prevImg);
-			posPlayer = "right";
-			x += velocity * 5;
-			playerLabel.setLocation(x, y);
-			if(x == Main.xSize - 35) { // Quand le joueur sors de la droite de l'écran
-				borderManagement(posPlayer); 
+			if(collision) {
+				new SoundEffect("collision(firered_0007)").play();
+				this.knockback(8);
+			} else {
+				this.posPlayer = "right";
+				this.frameRIGHT(this.prevImg);
+				Main.xPlayer += this.velocity * 5;
+				this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+				if(Main.xPlayer >= Main.xSize - 35) { // Quand le joueur sors de la droite de l'écran
+					this.tableauSuivant(); 
+				}
 			}
 			break;
+			
 		default: 
 			break;
 		}
 	}
 
 	public void originalAnim() {
-		switch(posPlayer) {
+		switch(this.posPlayer) {
 		case "up":
-			playerLabel.setIcon(player_13);
-			prevImg = player_13;
+			this.playerLabel.setIcon(this.player_13);
+			this.prevImg = this.player_13;
 			break;
 		case "left":
-			playerLabel.setIcon(player_05);
-			prevImg = player_05;
+			this.playerLabel.setIcon(this.player_05);
+			this.prevImg = this.player_05;
 			break;
 		case "down": 
-			playerLabel.setIcon(player_01);
-			prevImg = player_01;
+			this.playerLabel.setIcon(this.player_01);
+			this.prevImg = this.player_01;
 			break;
 		case "right": 
-			playerLabel.setIcon(player_09);
-			prevImg = player_09;
+			this.playerLabel.setIcon(this.player_09);
+			this.prevImg = this.player_09;
 			break;
 		default:
 			break;
 		}
 	}
 	
+	
 	// Changement de lieu de la map
-	public void borderManagement(String pos) {
-		switch (pos) {
+	public void tableauSuivant() {
+		char car = Main.tableau.charAt(0);
+		int entier = Integer.parseInt(Main.tableau.replace(car, ' ').replaceAll("\\s+","")); // Transforme A1 -> " 1" -> 1
+		
+		switch (this.posPlayer) {
 		case "up":
-			y = (Main.ySize - 110); // Espace entre le bord et la réapartion du joueur en px
-			playerLabel.setLocation(x, y);
-			new SoundEffect("click(firered_0005)").play();
+			Main.yPlayer = (Main.ySize - 110); // Espace entre le bord et la réapartion du joueur en px
+			this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+			entier--;
 			break;
 		case "left":
-			x = (Main.xSize - 60); // Espace entre le bord et la réapartion du joueur en px
-			playerLabel.setLocation(x, y);
+			Main.xPlayer = (Main.xSize - 60); // Espace entre le bord et la réapartion du joueur en px
+			this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+			car--;
 			break;
 		case "down":
-			y = -20; // Espace entre le bord et la réapartion du joueur en px
-			playerLabel.setLocation(x, y);
+			Main.yPlayer = -20; // Espace entre le bord et la réapartion du joueur en px
+			this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+			entier++;
 			break;
 		case "right":
-			x = -10; // Espace entre le bord et la réapartion du joueur en px
-			playerLabel.setLocation(x, y);
+			Main.xPlayer = -10; // Espace entre le bord et la réapartion du joueur en px
+			this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+			car++;
 			break;
 		default :
+			break;
+		}
+		//System.out.println(car + Integer.toString(entier)); // Pour le debug (savoir quel tableau on est passé)
+		Main.tableau = car + Integer.toString(entier);
+	}
+	
+	public void knockback(int multiplier) {
+		switch(this.posPlayer) {
+		case "up":
+				Main.yPlayer += multiplier;
+				this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+			break;
+		case "left":
+				Main.xPlayer += multiplier;
+				this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+			break;
+		case "down":
+				Main.yPlayer -= multiplier;
+				this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+			break;
+		case "right":
+				Main.xPlayer -= multiplier;
+				this.playerLabel.setLocation(Main.xPlayer, Main.yPlayer);
+			break;
+		default:
 			break;
 		}
 	}

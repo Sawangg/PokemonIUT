@@ -1,28 +1,35 @@
 package Map;
 
 import java.awt.Graphics;
+
 import java.awt.Graphics2D;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+import Main.Main;
+
 @SuppressWarnings("serial")
 public class Map extends JPanel {
-
-	//private JLabel  mapLabel = new JLabel();
-	
-	private ImageIcon imgFond1 = new ImageIcon("./ressources/map/1.png");
-	
-	public Map() {
-		//mapLabel.setIcon(map1);
-	}
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
+		this.repaint();
 		Graphics g2 = (Graphics2D)g;
-		g2.drawImage(imgFond1.getImage(), 0, 0, null);
+		try {
+			ImageIcon background = new ImageIcon("./ressources/map/" + Main.tableau + ".png");
+			g2.drawImage(background.getImage(), 0, 0, null);	
+		} catch(Exception e) {
+			e.getMessage();
+		}
 	}
 	
+	public void noMapPabel() {
+		this.setVisible(false);
+	}
 	
-	
+	public void addMapPabel() {
+		this.setVisible(true);
+	}
+
 }

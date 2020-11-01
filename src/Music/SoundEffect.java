@@ -1,6 +1,7 @@
 package Music;
 
 import java.io.File;
+
 import java.io.IOException;
 
 import javax.sound.sampled.AudioSystem;
@@ -32,7 +33,7 @@ public class SoundEffect {
 	}
 	
 	public void play() {
-	    clip.start();
+	    this.clip.start();
 	}
 	
 	public void loop(int l) {
