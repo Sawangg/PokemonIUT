@@ -19,6 +19,6 @@ Added infinite map support and started the tile map
 
 ## Day 5
 
-Added collisions even tho it's not perfect it's a beginning
+Added collisions even though it's not perfect it's a beginning
 
 ![](https://i.imgur.com/QUULBBL.gif)
